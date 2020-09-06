@@ -1,9 +1,9 @@
 user_list:
-  path: /userList
+  path: /api/users
   controller: App\Controller\UserController:indexAction
   methods: [GET]
 
 user_create:
-  path: /userCreate
+  path: /api/user/new
   controller: App\Controller\UserController:createAction
   methods: [ POST ]
