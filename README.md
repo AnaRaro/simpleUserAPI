@@ -57,7 +57,7 @@ This command creates the user with the specified information in the database.
 $ curl -H 'content-type: application/json' -v -X POST -d '{"username":"tester","fullname":"Tester", "email":"test@test.com"}' http://<baseurl>:8000/api/user/new
 ```
 
-##Documentation
+## Documentation
 You can check the documentation for the API in:
 ```
 http://<baseurl>:8000/api/doc.json
