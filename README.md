@@ -25,7 +25,7 @@ First start with configuring the database in the file .env (this file is in the 
 Now edit the following line with your database server information:
 
 ```dotenv
-DATABASE_URL=mysql://db_user:db_password@127.0.0.1:3306/db_name?serverVersion=5.7
+DATABASE_URL=mysql://db_user:db_password@<baseurl>:3306/db_name?serverVersion=5.7
 ```
 
 Once you've configured the database it's time to create the database and migrate the table:
@@ -48,11 +48,17 @@ Here you have the requests that you can make to the API.
 ##### GET - Gets the list of all users
 This command returns a json with the list of users.
 ```bash
-$ curl -H 'content-type: application/json' -v -X GET http://127.0.0.1:8000/api/users
+$ curl -H 'content-type: application/json' -v -X GET http://<baseurl>:8000/api/users
 ```
 
 ##### POST - Creates users
 This command creates the user with the specified information in the database.
 ```bash
-$ curl -H 'content-type: application/json' -v -X POST -d '{"username":"tester","fullname":"Tester", "email":"test@test.com"}' http://127.0.0.1:8000/api/user/new
+$ curl -H 'content-type: application/json' -v -X POST -d '{"username":"tester","fullname":"Tester", "email":"test@test.com"}' http://<baseurl>:8000/api/user/new
+```
+
+##Documentation
+You can check the documentation for the API in:
+```
+http://<baseurl>:8000/api/doc.json
 ```
