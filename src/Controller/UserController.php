@@ -9,11 +9,19 @@ use App\Form\UserType;
 use FOS\RestBundle\Controller\AbstractFOSRestController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Nelmio\ApiDocBundle\Annotation\Model;
+use Swagger\Annotations as SWG;
 
 class UserController extends AbstractFOSRestController
 {
     /**
-	 * Gets all users
+	 * List of Users
+	 *
+	 * @SWG\Response (
+	 *     response=200,
+	 *     description="Returns all the users from the database",
+	 *     @Model(type=User::class)
+	 *  )
 	 *
      * @param Request $request
      * @return array|string[]|Response
@@ -27,6 +35,12 @@ class UserController extends AbstractFOSRestController
 
     /**
 	 * Creates a new user
+	 *
+	 * @SWG\Response (
+	 *     response=200,
+	 *     description="Inserts user in the database",
+	 *     @Model(type=User::class)
+	 *  )
 	 *
      * @param Request $request
      * @return Response

@@ -4,6 +4,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Swagger\Annotations as SWG;
 
 /**
  * @ORM\Table(name="user")
@@ -14,6 +15,8 @@ class User
 	/**
 	 * @var int/null
 	 *
+	 * @SWG\Property(description="The unique identifier of the user.")
+	 *
 	 * @ORM\Column(name="id", type="integer")
 	 * @ORM\Id()
 	 * @ORM\GeneratedValue(strategy="AUTO")
@@ -22,6 +25,8 @@ class User
 
 	/**
 	 * @var string/null
+	 * 
+	 * @SWG\Property(description="The unique username.")
 	 *
 	 * @ORM\Column(name="username", type="string")
 	 */
@@ -30,12 +35,16 @@ class User
 	/**
 	 * @var string/null
 	 *
+	 * @SWG\Property(description="The full name of the user.")
+	 *
 	 * @ORM\Column(name="fullname", type="string")
 	 */
 	private $fullName;
 
 	/**
 	 * @var string/null
+	 *
+	 * @SWG\Property(description="The user email.")
 	 *
 	 * @ORM\Column(name="email", type="string")
 	 */
